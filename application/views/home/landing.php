@@ -16,8 +16,8 @@
       </div>
       <nav>
         <ul>
-          <li><a href="">Sign In</a></li>
-          <input type="button" name="join" class="join" value="join">
+          <li><a href="<?php echo base_url('auth') ?>/login">Sign In</a></li>
+          <a href="<?php echo base_url('auth')?>/register"><button name="join" class="join">Join</button></a>
         </ul>
       </nav>
     </div>
