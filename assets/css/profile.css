@@ -1,0 +1,24 @@
+.gambar img {
+	margin-left: 50px;
+	border-radius: 20px;
+}
+
+.gambar {
+	padding: 10px;
+	height: 200px;
+}
+
+.isi h5 {
+	font-size: 30px;
+}
+
+.editpro {
+	float: right;
+	margin-top: 60px;
+	margin-right: 30px;
+}
+
+.editpro a:hover {
+	text-decoration: underline;
+	color: #c43552;
+}
