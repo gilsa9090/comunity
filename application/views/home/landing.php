@@ -28,7 +28,7 @@
         <p>One Of Biggest Community for architect</p>
         <p>Would you like to join us? let get some interest things together</p>
         <p>Join now, and get some benefit from us</p>
-        <a href="" class="btn">Join Now!</a>
+        <a href="<?= base_url('auth') ?>/register" class="btn">Join Now!</a>
         <h6>9842++ Active Members Now</h6>
         <img src="<?= base_url('assets') ?>/image/hero.png" alt="" class="feature" />
     </div>

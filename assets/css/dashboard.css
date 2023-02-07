@@ -1,0 +1,124 @@
+.c {
+    margin: 10px;
+    height: 200px;
+    background-color: #f7f6f6;
+    border-radius: 10px;
+    box-shadow: 3px 3px 20px #acacac;
+    margin-top: 20px;
+}
+
+.c2 {
+    background-color: #f7f6f6;
+    border-radius: 10px;
+    box-shadow: 3px 3px 20px #acacac;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.detail {
+    float: right;
+}
+
+.detail button {
+    width: 100px;
+    height: 30px;
+    border: 2px solid #c43552;
+    border-radius: 20px;
+    color: #c43552; 
+    background-color: #f7f6f6;
+}
+
+.detail button:hover {
+    width: 100px;
+    height: 30px;
+    border: none;
+    border-radius: 20px;
+    background-color: #c43552; 
+    color: #f7f6f6;
+    transition: 0.3s ease-in;
+}
+
+.images {
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+    border: 10px;
+}
+
+.c1 {
+    margin: 10px;
+    height: 30px;
+    background-color: #cb4e67;
+    border-radius: 10px;
+    box-shadow: 3px 3px 20px #acacac;
+    font-size: 18px;
+    text-align: center;
+    color: #f7f6f6;
+}
+
+.c h6 {
+    font-size: 20px;
+    padding: 15px;
+}
+
+.c p {
+    font-size: 45px;
+    text-align: center;
+    padding: 10px;
+    font-style: italic;
+    font-weight: 500;
+    color: #c43552;
+}
+
+.c a {
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.kas {
+    width: 100px;
+    height: 30px;
+    border: 2px solid #c43552;
+    border-radius: 20px;
+    color: #c43552; 
+    background-color: #f7f6f6;
+    float: right;
+    margin-bottom: 20px;
+}
+
+.kas:hover {
+    width: 100px;
+    height: 30px;
+    border-radius: 20px;
+    background-color: #c43552; 
+    color: #f7f6f6;
+    float: right;
+    margin-bottom: 20px;
+    transition: 0.2s ease-in-out;
+}
+
+.spare {
+    width: 90%;
+    height: 80px;
+    margin: 10px;
+    border: 1px solid #af6363;
+    border-radius: 10px;
+}
+
+.spare h4 {
+    color: #21c13c;
+    font-size: 30px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.jabatan {
+    float: right;
+    margin-bottom: 30px;
+}
+
+.jabatan h6 {
+    font-size: 18px;
+    margin-bottom: 50px;
+    margin-right: 10px;
+}

@@ -30,7 +30,7 @@ nav li {
 
 nav a {
   text-decoration: none;
-  color: #c43552;
+  color: #c43552; 
   font-weight: 400;
 }
 
@@ -40,6 +40,7 @@ nav a {
   background-color: #c43552;
   color: #fff;
   border-radius: 20px;
+  border: none;
 }
 
 .join:hover {
