@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row dashboard">
-        <div class="col-sm-5 c1">Hallo Selamat Datang Badang!. Ada Kabar?</div>
+        <div class="col-sm-5 c1">Hallo Selamat Datang <?= $user['nama']; ?>.</div>
     </div>
     <div class="row dashboard">
         <div class="col-sm-7 c">

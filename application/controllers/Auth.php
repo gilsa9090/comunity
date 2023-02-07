@@ -26,7 +26,19 @@ class Auth extends CI_Controller
         $user = $this->db->get_where('user', ['username' => $username])->row_array();
         if($user){
             if ($user['is_active'] == 1) {
-                
+                if(password_verify($password, $user['password'])){
+                    $data = [
+                        'username' => $user['username'],
+                        'role_id' => $user['role_id']
+                    ];
+                    $this->session->set_userdata($data);
+                    redirect('admin');
+                } else {
+                $this->session->set_flashdata('flash', '<div class="alert alert-danger" role="alert">
+                Password salah
+                </div>');
+                redirect('auth/login');
+                }
             } else {
                 $this->session->set_flashdata('flash', '<div class="alert alert-danger" role="alert">
                 User Tidak Aktif
@@ -58,6 +70,15 @@ class Auth extends CI_Controller
             </div>');
             redirect('auth/login');
         }
+    }
+
+    public function logout(){
+        $this->session->unset_userdata('username');
+        $this->session->unset_userdata('role_id');
+        $this->session->set_flashdata('flash', '<div class="alert alert-success" role="alert">
+        Berhasil Logout
+        </div>');
+        redirect('auth/login');
     }
 
 
