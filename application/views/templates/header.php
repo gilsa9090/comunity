@@ -54,14 +54,9 @@
 
             <!-- Heading -->
 
-            <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('admin') ?>/role">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Tembah Role</span></a>
-            </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('admin') ?>/divisi">
+                <a class="nav-link" href="<?php echo base_url('divisi') ?>">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Divisi</span></a>
             </li>
@@ -78,7 +73,7 @@
 
             <!-- Heading -->
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('admin') ?>/anggota">
+                <a class="nav-link" href="<?php echo base_url('divisiMember') ?>">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Daftar Anggota</span></a>
             </li>
