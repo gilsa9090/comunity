@@ -15,9 +15,6 @@
             <div class="spare">
                 <h4>Aktif</h4>
             </div>
-            <div class="jabatan">
-                <h6>Jabatan : Ketua</h6>
-            </div>
         </div>
     </div>
 </div>
@@ -29,39 +26,19 @@
                 <h5 class="my-4">Daftar Anggota</h5>
                 <thead>
                     <tr>
-                        <th scope="col">No</th>
                         <th scope="col">Nama</th>
+                        <th scope="col">Divisi</th>
+                        <th scope="col">Status</th>
                     </tr>
                 </thead>
                 <tbody>
+                    <?php foreach($nama as $n) : ?>
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Udin</td>
+                        <td><?= $n['nama']; ?></td>
+                        <td><?= $n['nama_divisi']; ?></td>
+                        <td><?= $n['status']; ?></td>
                     </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Udin</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Udin</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Udin</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Udin</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Udin</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Udin</td>
-                    </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
             <div class="detail mr-2 my-4">

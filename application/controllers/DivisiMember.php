@@ -17,7 +17,7 @@ class DivisiMember extends CI_Controller
             $data['user'] = $this->db->get_where('user', ['username' => 
             $this->session->userdata('username')])->row_array();
             $this->load->view('templates/header',$data);
-            $this->load->view('pages/divisiMember', $data);
+            $this->load->view('admin/pages/divisiMember', $data);
             $this->load->view('templates/footer');
     }
 
@@ -33,7 +33,7 @@ class DivisiMember extends CI_Controller
                 $data['user'] = $this->db->get_where('user', ['username' => 
                 $this->session->userdata('username')])->row_array();
                 $this->load->view('templates/header',$data);
-                $this->load->view('insertForm/divisiMember');
+                $this->load->view('admin/insertForm/divisiMember');
                 $this->load->view('templates/footer');
             } else {
                 $this->DivisiMember_model->insert();
@@ -47,7 +47,7 @@ class DivisiMember extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['username' => 
         $this->session->userdata('username')])->row_array();
         $this->load->view('templates/header',$data);
-        $this->load->view('pages/detailMember', $data);
+        $this->load->view('admin/pages/detailMember', $data);
         $this->load->view('templates/footer'); 
     }
 
@@ -63,7 +63,7 @@ class DivisiMember extends CI_Controller
                 $data['user'] = $this->db->get_where('user', ['username' => 
                 $this->session->userdata('username')])->row_array();
                 $this->load->view('templates/header',$data);
-                $this->load->view('editForm/divisiMember',$data);
+                $this->load->view('admin/editForm/divisiMember',$data);
                 $this->load->view('templates/footer');
             } else {
                 $this->DivisiMember_model->edit();

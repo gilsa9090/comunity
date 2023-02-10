@@ -15,7 +15,7 @@ class Divisi extends CI_Controller
         $data['user'] = $this->db->get_where('user', ['username' => 
         $this->session->userdata('username')])->row_array();
         $this->load->view('templates/header',$data);
-        $this->load->view('pages/divisi', $data);
+        $this->load->view('admin/pages/divisi', $data);
         $this->load->view('templates/footer');
     }
 
@@ -28,7 +28,7 @@ class Divisi extends CI_Controller
                 $data['user'] = $this->db->get_where('user', ['username' => 
                 $this->session->userdata('username')])->row_array();
                 $this->load->view('templates/header',$data);
-                $this->load->view('insertForm/divisi');
+                $this->load->view('admin/insertForm/divisi');
                 $this->load->view('templates/footer');
             } else {
                 $this->Divisi_model->insert();
