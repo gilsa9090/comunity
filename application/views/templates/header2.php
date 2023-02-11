@@ -21,6 +21,7 @@
     <link href="<?= base_url('assets') ?>/css/sb-admin-2.min.css" rel="stylesheet">
     <link href="<?= base_url('assets') ?>/css/dashboard.css" rel="stylesheet">
     <link href="<?= base_url('assets') ?>/css/profile.css" rel="stylesheet">
+    <link href="<?= base_url('assets') ?>/css/card.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -62,7 +63,7 @@
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('member/kta') ?>">
+                <a class="nav-link" href="<?php echo base_url('member/kta') ?>/<?php echo $user['id']; ?>">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Buat KTA</span></a>
             </li>

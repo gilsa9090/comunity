@@ -1,0 +1,56 @@
+.images img {
+	border-radius: 50%;
+	margin: 40px;
+	margin-top: 50px;
+}
+
+.kta {
+	border-radius: 26px;
+	background-image: linear-gradient(#d5687e, #c43552);
+	height: 330px;
+}
+
+.ktacard {
+	color: #f4f4f3;
+}
+
+.kta .isi {
+	margin-top: 60px;
+	line-height: 10px;
+}
+
+.lo {
+	float: right;
+	margin-right: 30px;
+	margin-top: 50px;
+}
+
+.lo h3 {
+	font-size: 18px;
+	color: #f4f4f3;
+	font-style: italic;
+	font-weight: 800;
+}
+
+.export {
+	margin: 100px;
+}
+
+.pdf {
+	background-color: #d5687e;
+	color: #f4f4f3;
+	width: 150px;
+	height: 40px;
+	border-radius: 15px;
+	border: none;
+}
+
+.pdf:hover {
+	color: #c43552;
+	background-color: #f4f4f3;
+	width: 150px;
+	height: 40px;
+	border-radius: 15px;
+	border: 2px solid #c43552;
+	transition: 0.3s ease-in-out;
+}

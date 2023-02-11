@@ -6,6 +6,8 @@ class Admin extends CI_Controller
     {
         parent::__construct();
         $this->load->model('DivisiMember_model');
+        $this->load->model('Card');
+        $this->load->model('News_model');
     }
 
     public function index()
@@ -38,12 +40,13 @@ class Admin extends CI_Controller
         $this->load->view('templates/footer');
     }
 
-    public  function kta(){
+    public  function kta($id){
+        $data['nama'] = $this->Card->users($id);
         $data['title'] = 'Halaman Admin';
         $data['user'] = $this->db->get_where('user', ['username' => 
         $this->session->userdata('username')])->row_array();
         $this->load->view('templates/header', $data);
-        $this->load->view('admin/pages/card');
+        $this->load->view('admin/pages/card', $data);
         $this->load->view('templates/footer');
     }
 
@@ -67,6 +70,7 @@ class Admin extends CI_Controller
     }
 
     public  function news(){
+        $data['news'] = $this->News_model->index();
         $data['title'] = 'Halaman Admin';
         $data['user'] = $this->db->get_where('user', ['username' => 
         $this->session->userdata('username')])->row_array();
