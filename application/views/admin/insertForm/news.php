@@ -8,7 +8,7 @@
                     Tambahkan Berita
                 </div>
                 <div class="card-body">
-                <form action="" method="post" enctype="multipart/form-data">
+                <?php echo form_open_multipart('news/insert');?>
                     <div class="form-group">
                         <label for="berita">Berita</label>
                         <input type="text" class="form-control" name="berita">
@@ -21,7 +21,7 @@
                         <label for="isi">Isi</label>
                         <textarea name="isi" id="" class="form-control"></textarea>
                     </div>
-                    <input type="submit" value="insert" name="insert" class="btn btn-primary float-right" id="">
+                    <input type="submit" value="insert" name="submit" class="btn btn-primary float-right" id="">
                 </form>
                 </div>
             </div>
