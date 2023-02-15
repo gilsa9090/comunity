@@ -10,6 +10,22 @@ class News extends CI_Controller
         $this->load->library('form_validation');
     }
 
+    public  function delete($id)
+    {
+        $this->News_model->delete($id);
+        redirect('admin/news');
+    }
+
+    public  function detail($id)
+    {
+            $data['news'] = $this->News_model->getById($id);
+            $data['title'] = 'Halaman News';
+            $data['user'] = $this->db->get_where('user', ['username' => 
+            $this->session->userdata('username')])->row_array();
+            $this->load->view('templates/header', $data);
+            $this->load->view('admin/detail/news', $data);
+            $this->load->view('templates/footer');
+    }
 
     public  function insert()
     {

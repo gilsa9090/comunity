@@ -8,10 +8,12 @@ class Admin extends CI_Controller
         $this->load->model('DivisiMember_model');
         $this->load->model('Card');
         $this->load->model('News_model');
+        $this->load->model('Gallery_model');
     }
 
     public function index()
     {
+        $data['news'] = $this->News_model->index();
         $data['nama'] = $this->DivisiMember_model->index();
         $data['title'] = 'Halaman Admin';
         $data['user'] = $this->db->get_where('user', ['username' => 
@@ -80,6 +82,7 @@ class Admin extends CI_Controller
     }
 
     public  function gallery(){
+        $data['gallery'] = $this->Gallery_model->index();
         $data['title'] = 'Halaman Admin';
         $data['user'] = $this->db->get_where('user', ['username' => 
         $this->session->userdata('username')])->row_array();

@@ -49,19 +49,12 @@
         <table class="table">
                 <h5 class="my-4">Berita Terkini</h5>
                 <tbody>
+                    <?php foreach($news as $n) : ?>
                     <tr>
-                        <th scope="row"><img class="images" src="<?= base_url('assets') ?>/image/me.jpg" alt=""></th>
-                        <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos deserunt eaque ad molestias eveniet ullam dolorum, optio iste quidem eligendi expedita similique voluptatibus quisquam. Natus, provident debitis! Corporis, harum non?</td>
+                        <th scope="row"><img class="images" src="<?= base_url('assets') ?>/image/<?= $n['gambar']; ?>" alt=""></th>
+                        <td><?= $n['berita']; ?></td>
                     </tr>
-                    <tr>
-                        <th scope="row"><img class="images" src="<?= base_url('assets') ?>/image/me.jpg" alt=""></th>
-                        <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos deserunt eaque ad molestias eveniet ullam dolorum, optio iste quidem eligendi expedita similique voluptatibus quisquam. Natus, provident debitis! Corporis, harum non?</td>
-                    </tr>
-                    <tr>
-                        <th scope="row"><img class="images" src="<?= base_url('assets') ?>/image/me.jpg" alt=""></th>
-                        <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos deserunt eaque ad molestias eveniet ullam dolorum, optio iste quidem eligendi expedita similique voluptatibus quisquam. Natus, provident debitis! Corporis, harum non?</td>
-                    </tr>
-                    
+                    <?php endforeach; ?>
                 </tbody>
             </table>
             <div class="detail mr-2 my-4">

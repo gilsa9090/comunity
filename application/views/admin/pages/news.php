@@ -11,12 +11,12 @@
         <tbody>
             <?php foreach($news as $d) : ?>
             <tr>
-            <td><img src="<?= base_url('assets/image/') ?><?= $d['gambar']; ?>" alt=""></td>
+            <td><img src="<?= base_url('assets/image/') ?><?= $d['gambar']; ?>" width="200" height="170" alt=""></td>
             <td><?= $d['berita']; ?></td>
             <td>
-                <a href="<?php base_url(); ?>divisiMember/detail/<?php echo $d['id'];?>"><span class="badge badge-info">Detail</span></a>
-                <a href=""><span class="badge badge-warning">Edit</span></a>
-                <a href=""><span class="badge badge-danger">Delete</span></a>
+                <a href="<?= base_url('news/detail'); ?>/<?php echo $d['id'];?>"><span class="badge badge-info">Detail</span></a>
+                <a href="<?= base_url('news/edit') ?>/<?= $d['id']; ?>"><span class="badge badge-warning">Edit</span></a>
+                <a href="<?= base_url('news/delete') ?>/<?= $d['id']; ?>"><span class="badge badge-danger">Delete</span></a>
             </td>
             </tr>
             <?php endforeach; ?>
