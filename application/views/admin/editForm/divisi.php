@@ -10,7 +10,7 @@
                 <?php echo validation_errors(); ?>
                 <form action="" method="post">
                     <div class="form-group">
-                        <input type="hidden" value="<?= $divisi->id; ?>">
+                        <input type="hidden" name="id" value="<?= $divisi->id; ?>">
                         <label for="nama">Nama</label>
                         <input type="text" class="form-control" value="<?= $divisi->nama_divisi; ?>" name="nama" id="nama">
                     </div>
@@ -21,7 +21,7 @@
                         <option value="nonaktif">Nonaktif</option>
                         </select>
                     </div>
-                    <input type="submit" value="insert" name="insert" class="btn btn-primary float-right" id="">
+                    <input type="submit" value="Edit" name="insert" class="btn btn-primary float-right" id="">
                 </form>
                 </div>
             </div>

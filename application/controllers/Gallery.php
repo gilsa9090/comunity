@@ -63,8 +63,36 @@ class Gallery extends CI_Controller
             $this->load->view('admin/editForm/gallery', $data);
             $this->load->view('templates/footer');
         } else {
-            $this->Gallery_model->edit();
+            $gallery = $this->Gallery_model->getById($id);
+
+        if ($this->input->method() == 'post') {
+            $judul = $this->input->post('judul');
+            $caption = $this->input->post('caption');
+            $gambar = $this->input->post('gambar');
+
+            if (!empty($_FILES['gambar']['name'])) {
+                $config['upload_path'] = './assets/image/';
+                $config['allowed_types'] = 'gif|jpg|jpeg|png';
+
+                $this->load->library('upload', $config);
+                if ($this->upload->do_upload('gambar')) {
+                    $upload_data = $this->upload->data();
+                    $gambar = $upload_data['file_name'];
+                } else {
+                    echo "error";
+                    return;
+                }
+            }
+            $this->Gallery_model->edit($id, array(
+                'judul' => $judul,
+                'caption' => $caption,
+                'gambar' => $gambar
+            ));
+
             redirect('admin/gallery');
+        } else {
+            echo "error";
+        }
         }
 
     }

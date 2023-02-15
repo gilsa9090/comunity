@@ -44,30 +44,10 @@ class Gallery_model extends CI_Model
         $this->db->insert('gallery', $data);
     }
 
-    public function edit()
+    public function edit($id, $data)
     {
-        $gambar = $_FILES['gambar']['name'];
 
-        if ($gambar) {
-            $config['upload_path'] = './assets/image/';
-            $config['allowed_types'] = 'png|jpg|jpeg';
-            
-            $this->load->library('upload', $config);
-            if ($this->upload->do_upload('gambar')) {
-                $new_gambar = $this->upload->data('file_name');
-            } else {
-                echo "Error";
-            }
-        }
-
-        $data = [
-            "judul" => $this->input->post('judul'),
-            "gambar" => $gambar,
-            "caption" => $this->input->post('caption')
-
-        ];
-        
-        $this->db->where('id', $this->input->post('id'));
+        $this->db->where('id', $id);
         $this->db->update('gallery', $data);
     }
     
