@@ -1,6 +1,6 @@
 <?php
 
-class Card extends CI_Model
+class Card_model extends CI_Model
 {
     public function users($id) 
     {

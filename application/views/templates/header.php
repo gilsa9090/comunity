@@ -42,6 +42,8 @@
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
+            <hr class="sidebar-divider">
+            <p class="text-light ml-3">Admin</p>
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
@@ -50,29 +52,28 @@
                     <span>Dashboard</span></a>
             </li>
 
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-
-
             <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url('divisi') ?>">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Divisi</span></a>
             </li>
 
+            <!-- Divider -->
+
+            <!-- Heading -->
+            <!-- Nav Item - Utilities Collapse Menu -->
+
+            <!-- Divider -->
+            <hr class="sidebar-divider"><p class="text-light ml-3">Member</p>
+
+            <!-- Heading -->
+
             <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url('admin') ?>/kta/<?php echo $user['id']; ?>">
                     <i class="fas fa-fw fa-chart-area"></i>
                     <span>Buat KTA</span></a>
             </li>
-            <!-- Nav Item - Utilities Collapse Menu -->
 
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
             <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url('divisiMember') ?>">
                     <i class="fas fa-fw fa-table"></i>

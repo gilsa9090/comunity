@@ -8,7 +8,8 @@ class Member extends CI_Controller
         parent::__construct();
         $this->load->model('DivisiMember_model');
         $this->load->model('Divisi_model');
-        $this->load->model('Card');
+        $this->load->library('Pdf');
+        $this->load->model('Card_model');
     }
 
     public function index()
@@ -24,7 +25,7 @@ class Member extends CI_Controller
 
     public function kta($id)
     {
-        $data['nama'] = $this->Card->users($id);
+        $data['nama'] = $this->Card_model->users($id);
         $data['title'] = 'Halaman Member';
         $data['user'] = $this->db->get_where('user', ['username' => 
         $this->session->userdata('username')])->row_array();
@@ -91,19 +92,8 @@ class Member extends CI_Controller
 
     public function pdf($id)
     {
-        $this->load->library('dompdf_gen');
-        $data['nama'] = $this->Card->users($id);
-        $data['user'] = $this->db->get_where('user', ['username' => 
-        $this->session->userdata('username')])->row_array();
-        $this->load->view('export', $data);
-
-        $paper_size = 'A4';
-        $orientation = 'landscape';
-        $html = $this->output->get_output();
-        $this->dompdf->set_paper($paper_size, $orientation);
-        $this->dompdf->load_html($html);
-        $this->dompdf->render();
-        $this->dompdf->stream("IDCard.pdf", array('Attachment' => 0));
+        $data['nama'] = $this->Card_model->users($id);
+        $this->load->view('admin/pages/pdf', $data);
     }
 
 

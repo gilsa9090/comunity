@@ -6,7 +6,7 @@ class Admin extends CI_Controller
     {
         parent::__construct();
         $this->load->model('DivisiMember_model');
-        $this->load->model('Card');
+        $this->load->model('Card_model');
         $this->load->model('News_model');
         $this->load->model('Gallery_model');
     }
@@ -43,7 +43,7 @@ class Admin extends CI_Controller
     }
 
     public  function kta($id){
-        $data['nama'] = $this->Card->users($id);
+        $data['nama'] = $this->Card_model->users($id);
         $data['title'] = 'Halaman Admin';
         $data['user'] = $this->db->get_where('user', ['username' => 
         $this->session->userdata('username')])->row_array();

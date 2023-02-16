@@ -49,19 +49,7 @@
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
-
-            <!-- Divider -->
-            <hr class="sidebar-divider">
-
-            <!-- Heading -->
-
-
-            <li class="nav-item">
-                <a class="nav-link" href="<?php echo base_url('member/divisi') ?>">
-                    <i class="fas fa-fw fa-chart-area"></i>
-                    <span>Divisi</span></a>
-            </li>
-
+            <hr class="sidebar-divider"><p class="text-light ml-3">Member</p>
             <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url('member/kta') ?>/<?php echo $user['id']; ?>">
                     <i class="fas fa-fw fa-chart-area"></i>

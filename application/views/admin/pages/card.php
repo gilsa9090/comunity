@@ -14,6 +14,11 @@
       <div class="lo">
         <h3>.Arsmagia</h3>
       </div>
+
+
     </div>
+    <div class="export mx-auto">
+        <a href="<?= base_url('card/pdf'); ?>/<?= $nama -> user_id; ?>" ><button class="pdf">Export</button></a>
+      </div>
   </div>
 </div>
