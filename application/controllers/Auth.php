@@ -33,9 +33,9 @@ class Auth extends CI_Controller
                     ];
                     $this->session->set_userdata($data);
                     if($user['role_id'] == 1){
-                        redirect('admin');
+                        redirect('admin/landing');
                     } else {
-                        redirect('member');
+                        redirect('member/landing');
                     }
                 } else {
                 $this->session->set_flashdata('flash', '<div class="alert alert-danger" role="alert">
@@ -82,7 +82,7 @@ class Auth extends CI_Controller
         $this->session->set_flashdata('flash', '<div class="alert alert-success" role="alert">
         Berhasil Logout
         </div>');
-        redirect('auth/login');
+        redirect('home');
     }
 
 

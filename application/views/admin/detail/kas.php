@@ -17,3 +17,4 @@
     <?php endforeach; ?>
   </tbody>
 </table>
+<a href="<?= base_url('admin/kas'); ?>"><button class="btn btn-danger mt-4">Kembali</button></a>

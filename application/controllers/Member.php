@@ -10,10 +10,15 @@ class Member extends CI_Controller
         $this->load->model('Divisi_model');
         $this->load->library('Pdf');
         $this->load->model('Card_model');
+        $this->load->model('Kas_model');
+        $this->load->model('Gallery_model');
+        $this->load->model('News_model');
     }
 
     public function index()
     {
+        $data['balance'] = $this->Kas_model->sum();
+        $data['news'] = $this->News_model->index();
         $data['nama'] = $this->DivisiMember_model->index();
         $data['title'] = 'Halaman Member';
         $data['user'] = $this->db->get_where('user', ['username' => 
@@ -36,7 +41,7 @@ class Member extends CI_Controller
 
     public function news()
     {
-        $data['nama'] = $this->DivisiMember_model->index();
+        $data['news'] = $this->News_model->index();
         $data['title'] = 'Halaman Member';
         $data['user'] = $this->db->get_where('user', ['username' => 
         $this->session->userdata('username')])->row_array();
@@ -45,21 +50,32 @@ class Member extends CI_Controller
         $this->load->view('templates/footer');
     }
     
+    public  function Newsdetail($id)
+    {
+            $data['news'] = $this->News_model->getById($id);
+            $data['title'] = 'Halaman News';
+            $data['user'] = $this->db->get_where('user', ['username' => 
+            $this->session->userdata('username')])->row_array();
+            $this->load->view('templates/header2', $data);
+            $this->load->view('member/detail/news', $data);
+            $this->load->view('templates/footer');
+    }
+    
     public function kas()
     {
-        $data['nama'] = $this->DivisiMember_model->index();
-        $data['title'] = 'Halaman Member';
-        $data['user'] = $this->db->get_where('user', ['username' => 
-        $this->session->userdata('username')])->row_array();
-        $this->load->view('templates/header2', $data);
-        $this->load->view('member/pages/kas', $data);
-        $this->load->view('templates/footer');
+        $data['nama'] = $this->Kas_model->laporan();
+            $data['title'] = 'Halaman Laporan';
+            $data['user'] = $this->db->get_where('user', ['username' => 
+            $this->session->userdata('username')])->row_array();
+            $this->load->view('templates/header2', $data);
+            $this->load->view('member/pages/kas', $data);
+            $this->load->view('templates/footer');
     }
 
     public function gallery()
     {
-        $data['nama'] = $this->DivisiMember_model->index();
-        $data['title'] = 'Halaman Member';
+        $data['gallery'] = $this->Gallery_model->index();
+        $data['title'] = 'Halaman Gallery';
         $data['user'] = $this->db->get_where('user', ['username' => 
         $this->session->userdata('username')])->row_array();
         $this->load->view('templates/header2', $data);
@@ -67,6 +83,16 @@ class Member extends CI_Controller
         $this->load->view('templates/footer');
     }
     
+    public  function Gallerydetail($id)
+    {
+            $data['gallery'] = $this->Gallery_model->getById($id);
+            $data['title'] = 'Halaman News';
+            $data['user'] = $this->db->get_where('user', ['username' => 
+            $this->session->userdata('username')])->row_array();
+            $this->load->view('templates/header2', $data);
+            $this->load->view('member/detail/galery', $data);
+            $this->load->view('templates/footer');
+    }
     
 
     public  function divisi(){
@@ -82,7 +108,7 @@ class Member extends CI_Controller
     public function divisiMember()
     {
             $data['member'] = $this->DivisiMember_model->index();
-            $data['title'] = 'Halaman Admin';
+            $data['title'] = 'Halaman Member';
             $data['user'] = $this->db->get_where('user', ['username' => 
             $this->session->userdata('username')])->row_array();
             $this->load->view('templates/header2',$data);
@@ -96,6 +122,14 @@ class Member extends CI_Controller
         $this->load->view('admin/pages/pdf', $data);
     }
 
+    public function landing()
+    {
+        $data['gallery'] = $this->Gallery_model->index();
+        $data['news'] = $this->News_model->index();
+        $data['user'] = $this->db->get_where('user', ['username' => 
+        $this->session->userdata('username')])->row_array();
+        $this->load->view('member/landing', $data);
+    }
 
 
 }

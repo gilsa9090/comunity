@@ -10,7 +10,7 @@
         <p class="card-text"></p>
         <p class="card-text"><small class="text-muted">Member Since <?php echo date('d, F, Y', $user['date_created']); ?></small></p>
       </div>
-      <div class="editpro"><a href="">Edit Profile</a></div>
+      <div class="editpro"><a href="<?= base_url('profile/updateMember') ?>">Edit Profile</a></div>
     </div>
   </div>
 </div>

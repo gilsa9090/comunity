@@ -5,9 +5,9 @@
     <div class="row dashboard">
         <div class="col-sm-7 c">
             <h6>Total Kas Terkini</h6>
-            <p>Rp.9000000</p>
+            <p>Rp.<?= $balance ?></p>
             <div class="">
-                <a href=""><button name="kas" class="kas">Bayar Kas</button></a>
+                <a href="<?= base_url('admin/kas'); ?>"><button name="kas" class="kas">Bayar Kas</button></a>
             </div>
         </div>
         <div class="col-sm-4 c">

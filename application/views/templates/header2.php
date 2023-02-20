@@ -22,6 +22,7 @@
     <link href="<?= base_url('assets') ?>/css/dashboard.css" rel="stylesheet">
     <link href="<?= base_url('assets') ?>/css/profile.css" rel="stylesheet">
     <link href="<?= base_url('assets') ?>/css/card.css" rel="stylesheet">
+    <link href="<?= base_url('assets') ?>/css/kas.css" rel="stylesheet">
 </head>
 
 <body id="page-top">
@@ -283,9 +284,14 @@
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                                 aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="<?= base_url('admin/profile'); ?>">
+                                <a class="dropdown-item" href="<?= base_url('profile/memberEdit'); ?>">
                                     <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Profile
+                                </a>
+
+                                <a class="dropdown-item" href="<?= base_url('member/landing'); ?>">
+                                <i class="fas fa-home fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Home Page
                                 </a>
 
                                 <div class="dropdown-divider"></div>

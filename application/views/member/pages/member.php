@@ -5,10 +5,7 @@
     <div class="row dashboard">
         <div class="col-sm-7 c">
             <h6>Total Kas Terkini</h6>
-            <p>Rp.9000000</p>
-            <div class="">
-                <a href=""><button name="kas" class="kas">Bayar Kas</button></a>
-            </div>
+            <p>Rp.<?= $balance; ?></p>
         </div>
         <div class="col-sm-4 c">
             <h6>Status Keanggotaan</h6>
@@ -42,30 +39,23 @@
                 </tbody>
             </table>
             <div class="detail mr-2 my-4">
-                 <a href="<?= base_url('admin') ?>/anggota"><button>Details</button></a>    
+                 <a href="<?= base_url('member') ?>/divisiMember"><button>Details</button></a>    
             </div>
         </div>
         <div class="col-sm-7 c2 mt-12">
         <table class="table">
                 <h5 class="my-4">Berita Terkini</h5>
                 <tbody>
+                <?php foreach($news as $n) : ?>
                     <tr>
-                        <th scope="row"><img class="images" src="<?= base_url('assets') ?>/image/me.jpg" alt=""></th>
-                        <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos deserunt eaque ad molestias eveniet ullam dolorum, optio iste quidem eligendi expedita similique voluptatibus quisquam. Natus, provident debitis! Corporis, harum non?</td>
+                        <th scope="row"><img class="images" src="<?= base_url('assets') ?>/image/<?= $n['gambar']; ?>" alt=""></th>
+                        <td><?= $n['berita']; ?></td>
                     </tr>
-                    <tr>
-                        <th scope="row"><img class="images" src="<?= base_url('assets') ?>/image/me.jpg" alt=""></th>
-                        <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos deserunt eaque ad molestias eveniet ullam dolorum, optio iste quidem eligendi expedita similique voluptatibus quisquam. Natus, provident debitis! Corporis, harum non?</td>
-                    </tr>
-                    <tr>
-                        <th scope="row"><img class="images" src="<?= base_url('assets') ?>/image/me.jpg" alt=""></th>
-                        <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quos deserunt eaque ad molestias eveniet ullam dolorum, optio iste quidem eligendi expedita similique voluptatibus quisquam. Natus, provident debitis! Corporis, harum non?</td>
-                    </tr>
-                    
+                    <?php endforeach; ?>
                 </tbody>
             </table>
             <div class="detail mr-2 my-4">
-                 <a href="<?= base_url('admin') ?>/news"><button>Details</button></a>    
+                 <a href="<?= base_url('member') ?>/news"><button>Details</button></a>    
             </div>
         </div>
     </div> 
