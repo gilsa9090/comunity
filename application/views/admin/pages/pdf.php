@@ -30,33 +30,33 @@
 // create new PDF document
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
-// set document information
-$pdf->SetCreator(PDF_CREATOR);
-$pdf->SetAuthor('Nicola Asuni');
-$pdf->SetTitle('TCPDF Example 061');
-$pdf->SetSubject('TCPDF Tutorial');
-$pdf->SetKeywords('TCPDF, PDF, example, test, guide');
+// // set document information
+// $pdf->SetCreator(PDF_CREATOR);
+// $pdf->SetAuthor('Nicola Asuni');
+// $pdf->SetTitle('TCPDF Example 061');
+// $pdf->SetSubject('TCPDF Tutorial');
+// $pdf->SetKeywords('TCPDF, PDF, example, test, guide');
 
-// set default header data
-$pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 061', PDF_HEADER_STRING);
+// // set default header data
+// $pdf->SetHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 061', PDF_HEADER_STRING);
 
-// set header and footer fonts
-$pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
-$pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+// // set header and footer fonts
+// $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
+// $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 
-// set default monospaced font
-$pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
+// // set default monospaced font
+// $pdf->SetDefaultMonospacedFont(PDF_FONT_MONOSPACED);
 
-// set margins
-$pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
-$pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
-$pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
+// // set margins
+// $pdf->SetMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
+// $pdf->SetHeaderMargin(PDF_MARGIN_HEADER);
+// $pdf->SetFooterMargin(PDF_MARGIN_FOOTER);
 
-// set auto page breaks
-$pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+// // set auto page breaks
+// $pdf->SetAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
 
-// set image scale factor
-$pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
+// // set image scale factor
+// $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
 
 // set some language-dependent strings (optional)
 if (@file_exists(dirname(__FILE__).'/lang/eng.php')) {
@@ -83,8 +83,20 @@ $pdf->AddPage();
  * *********************************************************
  */
 
+
+ 
+
+
+
 // define some HTML content with style
-$html = <<<EOF
+
+$html = '
+<div class="card">
+<div align="center" style="border-radius: 50%">
+<img src="assets/image/' . $nama->image . '" width="150" height="150">
+</div>';
+
+$html1 = <<<EOF
 <!-- EXAMPLE OF CSS STYLE -->
 <style>
       * {
@@ -196,13 +208,11 @@ $html = <<<EOF
         color: #fff;
       }
     </style>
-    <div class="card">
-      <div class="img-bx">
-        <img src="$nama->image" alt="img" />
-      </div>
+    
+      
       <div class="content">
         <div class="detail">
-          <h2>$nama->nama<br /><span>$nama->nama_divisi</span></h2>
+          <h2>$nama->nama<br /><span>$nama->divisi_id</span></h2>
           <p class="sci">$nama->deskripsi</p>
         </div>
       </div>
@@ -211,6 +221,7 @@ EOF;
 
 // output the HTML content
 $pdf->writeHTML($html, true, false, true, false, '');
+$pdf->writeHTML($html1, true, false, true, false, '');
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 

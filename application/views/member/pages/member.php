@@ -32,7 +32,7 @@
                     <?php foreach($nama as $n) : ?>
                     <tr>
                         <td><?= $n['nama']; ?></td>
-                        <td><?= $n['nama_divisi']; ?></td>
+                        <td><?= $n['divisi_id']; ?></td>
                         <td><?= $n['status']; ?></td>
                     </tr>
                     <?php endforeach; ?>

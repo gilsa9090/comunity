@@ -8,6 +8,7 @@ class Kas extends CI_Controller
         parent::__construct();
         $this->load->model('Kas_model');
         $this->load->library('form_validation');
+        check();
     }
 
     public function insert()

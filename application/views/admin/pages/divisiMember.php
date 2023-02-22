@@ -14,13 +14,13 @@
             <?php foreach($member as $d) : ?>
             <tr>
             <td><?= $d['nama']; ?></td>
-            <td><?= $d['nama_divisi']; ?></td>
+            <td><?= $d['divisi_id']; ?></td>
             <td><?= $d['status']; ?></td>
             <td><?= $d['deskripsi']; ?></td>
             <td>
-                <a href=""><span class="badge badge-info">Detail</span></a>
-                <a href="<?= base_url('divisiMember/edit') ?>"><span class="badge badge-warning">Edit</span></a>
-                <a href=""><span class="badge badge-danger">Delete</span></a>
+                <a href="<?= base_url('divisiMember/detail') ?>/<?= $d['id_member']; ?>"><span class="badge badge-info">Detail</span></a>
+                <a href="<?= base_url('divisiMember/edit') ?>/<?= $d['id_member']; ?>"><span class="badge badge-warning">Edit</span></a>
+                <a href="<?= base_url('divisiMember/delete') ?>/<?= $d['id_member']; ?>"><span class="badge badge-danger">Delete</span></a>
             </td>
             </tr>
             <?php endforeach; ?>

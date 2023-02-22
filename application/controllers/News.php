@@ -8,6 +8,7 @@ class News extends CI_Controller
         parent::__construct();
         $this->load->model('News_model');
         $this->load->library('form_validation');
+        check();
     }
 
     public  function delete($id)

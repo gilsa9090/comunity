@@ -36,6 +36,7 @@ class Gallery extends CI_Controller
     {
         $this->Gallery_model->delete($id);
         redirect('admin/gallery');
+        check();
     }
 
     public  function detail($id)

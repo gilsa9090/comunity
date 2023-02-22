@@ -53,6 +53,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="<?= base_url('assets') ?>/js/sb-admin-2.min.js"></script>
+    <script src="<?= base_url('assets') ?>/js/html2canvas.js"></script>
 
     <!-- Page level plugins -->
     <script src="<?= base_url('assets') ?>/vendor/chart.js/Chart.min.js"></script>

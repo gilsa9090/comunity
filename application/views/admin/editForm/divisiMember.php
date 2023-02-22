@@ -8,17 +8,13 @@
                     Tambahkan Divisi Member
                 </div>
                 <div class="card-body">
-                <form action="<?= base_url('divisiMember/edit'); ?>" method="post">
-                    <input type="hidden" name="id" value="<?= $desc->id; ?>" id="">
+                <form action="" method="post">
+                    <input type="hidden" name="id" value="<?= $desc->id_member; ?>" id="">
                     <div class="form-group">    
                         <label for="nama">Nama</label>
                         <select class="form-control" id="jurusan" name="nama">
                         <?php foreach($nama as $n) :?>
-                            <?php if($n['nama'] == $n['nama']) :?>
-                                <option value="<?= $n['id']; ?>" selected><?= $n['nama']; ?></option>
-                                <?php else : ?>
                                 <option value="<?= $n['id']; ?>"><?= $n['nama']; ?></option>
-                            <?php endif; ?>
                         <?php endforeach; ?>
                         </select>
                     </div>
@@ -26,12 +22,12 @@
                         <label for="nama">Divisi</label>
                         <select class="form-control" id="jurusan" name="divisi">
                         <?php foreach($divisi as $d) :?>
-                        <option value="<?= $d['id']; ?>"><?= $d['nama_divisi']; ?></option>
+                        <option value="<?= $d['nama_divisi']; ?>"><?= $d['nama_divisi']; ?></option>
                         <?php endforeach; ?>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="nama">Divisi</label>
+                        <label for="nama">Status</label>
                         <select class="form-control" id="jurusan" name="status">
                         <option value="aktif">Aktif</option>
                         <option value="nonaktif">Nonaktif</option>
@@ -41,7 +37,7 @@
                         <label for="deskripsi">Deskripsi</label>
                         <textarea name="deskripsi" class="form-control"><?= $desc->deskripsi; ?></textarea>
                     </div>
-                    <input type="submit" value="insert" name="insert" class="btn btn-primary float-right" id="">
+                    <input type="submit" value="Edit" name="insert" class="btn btn-primary float-right" id="">
                 </form>
                 </div>
             </div>

@@ -21,7 +21,7 @@
                         <label for="nama">Divisi</label>
                         <select class="form-control" id="jurusan" name="divisi">
                         <?php foreach($divisi as $d) :?>
-                        <option value="<?= $d['id']; ?>"><?= $d['nama_divisi']; ?></option>
+                        <option value="<?= $d['nama_divisi']; ?>"><?= $d['nama_divisi']; ?></option>
                         <?php endforeach; ?>
                         </select>
                     </div>

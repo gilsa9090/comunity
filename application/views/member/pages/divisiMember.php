@@ -13,7 +13,7 @@
             <?php foreach($member as $d) : ?>
             <tr>
             <td><?= $d['nama']; ?></td>
-            <td><?= $d['nama_divisi']; ?></td>
+            <td><?= $d['divisi_id']; ?></td>
             <td><?= $d['status']; ?></td>
             <td><?= $d['deskripsi']; ?></td>
             <td>

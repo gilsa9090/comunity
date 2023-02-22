@@ -5,8 +5,8 @@
     </div>
     <div class="col-md-8 ktacard">
       <div class="card-body isi">
-        <h5 class="nama"><?= $nama -> nama; ?></h5>
-        <p class="card-text"><?= $nama -> nama_divisi; ?></p>
+        <h5 class="nama"><?= $user['nama']; ?></h5>
+        <p class="card-text"><?= $nama->divisi_id; ?></p>
         <p class="card-text"><small><?= $nama -> deskripsi; ?></small></p>
         <p class="card-text"><small>Member Since <?php echo date('d, F, Y', $user['date_created']); ?></small></p>
       </div>
@@ -16,7 +16,7 @@
       </div>
     </div>
     <div class="export mx-auto">
-        <a href="<?= base_url('member/pdf'); ?>/<?= $nama -> id; ?>" ><button class="pdf">Export</button></a>
+        <a href="<?= base_url('member/pdf'); ?>/<?= $nama -> user_id; ?>" ><button class="pdf">Export</button></a>
     </div>
   </div>
 </div>

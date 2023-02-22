@@ -6,6 +6,7 @@ class Profile extends CI_Controller
     {
         parent::__construct();
         $this->load->library('form_validation');
+        check();
     }
 
     public function index()

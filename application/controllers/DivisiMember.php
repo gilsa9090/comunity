@@ -8,7 +8,9 @@ class DivisiMember extends CI_Controller
         parent::__construct();
         $this->load->model('DivisiMember_model');
         $this->load->library('form_validation');
+        check();
     }
+
 
     public function index()
     {
@@ -41,18 +43,23 @@ class DivisiMember extends CI_Controller
             }
     }
 
-    public function detail(){
-        $data['member'] = $this->DivisiMember_model->getById();
+    public  function delete($id)
+    {
+        $this->DivisiMember_model->delete($id);
+        redirect('divisiMember');
+    }
+
+    public function detail($id){
+        $data['member'] = $this->DivisiMember_model->detail($id);
         $data['title'] = 'Halaman Admin';
         $data['user'] = $this->db->get_where('user', ['username' => 
         $this->session->userdata('username')])->row_array();
         $this->load->view('templates/header',$data);
-        $this->load->view('admin/pages/detailMember', $data);
+        $this->load->view('admin/detail/divisiMember', $data);
         $this->load->view('templates/footer'); 
     }
 
     public function edit($id){
-        $this->form_validation->set_rules('nama', 'Nama', 'required');
             $this->form_validation->set_rules('deskripsi', 'deskripsi', 'required');
 
             if($this->form_validation->run() == false){

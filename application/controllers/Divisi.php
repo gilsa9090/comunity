@@ -7,6 +7,7 @@ class Divisi extends CI_Controller
         parent::__construct();
         $this->load->model('Divisi_model');
         $this->load->library('form_validation');
+        check();
     }
 
     public  function delete($id)

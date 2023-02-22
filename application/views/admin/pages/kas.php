@@ -5,7 +5,7 @@
         <div class="card border-primary mb-3" style="max-width: 36rem;">
             <div class="card-body text-primary">
                 <h5 class="card-title">Set Nominal</h5>
-                <input class="form-control form-control-lg" type="text" value="<?= $kas->nominal; ?>" name="nominal">
+                <input class="form-control form-control-lg" type="text" readonly value="<?= $kas->nominal; ?>" name="nominal">
                 <button type="button" class="mt-3 btn btn-primary" data-toggle="modal" data-target="#insert">Set Nominal</button>
             </div>
         </div>

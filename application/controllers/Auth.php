@@ -8,6 +8,7 @@ class Auth extends CI_Controller
         parent::__construct();
         $this->load->model('Auth_model');
         $this->load->library('form_validation');
+        
     }
 
     public function login()
@@ -82,7 +83,7 @@ class Auth extends CI_Controller
         $this->session->set_flashdata('flash', '<div class="alert alert-success" role="alert">
         Berhasil Logout
         </div>');
-        redirect('home');
+        redirect('auth/login');
     }
 
 

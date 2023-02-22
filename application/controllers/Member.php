@@ -13,6 +13,7 @@ class Member extends CI_Controller
         $this->load->model('Kas_model');
         $this->load->model('Gallery_model');
         $this->load->model('News_model');
+        check();
     }
 
     public function index()
@@ -28,10 +29,9 @@ class Member extends CI_Controller
         $this->load->view('templates/footer');
     }
 
-    public function kta($id)
-    {
-        $data['nama'] = $this->Card_model->users($id);
-        $data['title'] = 'Halaman Member';
+    public  function kta($id){
+        $data['nama'] = $this->Card_model->detail($id);
+        $data['title'] = 'Halaman Admin';
         $data['user'] = $this->db->get_where('user', ['username' => 
         $this->session->userdata('username')])->row_array();
         $this->load->view('templates/header2', $data);
@@ -118,7 +118,7 @@ class Member extends CI_Controller
 
     public function pdf($id)
     {
-        $data['nama'] = $this->Card_model->users($id);
+        $data['nama'] = $this->Card_model->detail($id);
         $this->load->view('admin/pages/pdf', $data);
     }
 

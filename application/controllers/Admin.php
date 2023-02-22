@@ -10,6 +10,8 @@ class Admin extends CI_Controller
         $this->load->model('News_model');
         $this->load->model('Gallery_model');
         $this->load->model('Kas_model');
+        check();
+        
     }
 
     public function index()
@@ -45,7 +47,7 @@ class Admin extends CI_Controller
     }
 
     public  function kta($id){
-        $data['nama'] = $this->Card_model->users($id);
+        $data['nama'] = $this->DivisiMember_model->detail($id);
         $data['title'] = 'Halaman Admin';
         $data['user'] = $this->db->get_where('user', ['username' => 
         $this->session->userdata('username')])->row_array();
