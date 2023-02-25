@@ -39,6 +39,20 @@ class Kas_model extends CI_Model
 
     public function laporan()
     {
+        $bulan = $this->input->post('bulan');
+        $this->db->select('*');
+        $this->db->from('kas');
+        $this->db->join('user', 'user.id = kas.user_id');
+        $this->db->join('bulan', 'bulan.id = kas.bulan_id');
+        $this->db->where('bulan.id', $bulan);
+        $query = $this->db->get();
+
+        return $query->result_array();
+    }
+    
+    public function all()
+    {
+        $bulan = $this->input->post('bulan');
         $this->db->select('*');
         $this->db->from('kas');
         $this->db->join('user', 'user.id = kas.user_id');

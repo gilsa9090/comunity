@@ -63,7 +63,8 @@ class Member extends CI_Controller
     
     public function kas()
     {
-        $data['nama'] = $this->Kas_model->laporan();
+            $data['bulan'] = $this->Kas_model->getBulan();
+            $data['nama'] = $this->Kas_model->laporan();
             $data['title'] = 'Halaman Laporan';
             $data['user'] = $this->db->get_where('user', ['username' => 
             $this->session->userdata('username')])->row_array();

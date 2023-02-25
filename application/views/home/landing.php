@@ -101,6 +101,47 @@
           </div>
         </div>
     </div>
+     <!--NEWS-->
+     <div class="col-12 mt-7 mb-6">
+            <div class="text-center mt-5" style="color: #c43552;">
+                <hr>
+                <h3>News</h3>
+                <p>Some News About Us</p>
+            </div>
+            <div class="card-deck">
+                <?php foreach($news as $n) : ?>
+                <div class="card">
+                    <img src="<?= base_url('assets/image') ?>/<?= $n['gambar']; ?>" width="300" height="300" style="border-radius: 20px;" class="card-img-top" alt="...">
+                    <div class="card-body text-center">
+                    <h5 class="card-title"><?= $n['berita']; ?></h5>
+                    <p class="card-text"><?= $n['isi']; ?></p>
+                    </div>
+                </div>
+                <?php endforeach; ?>
+            </div>
+            <hr>
+        </div>
+    <!--Gallety-->
+    <div class="text-center mt-5" style="color: #c43552;">
+    <hr>
+    <h3>Gallery</h3>
+      <p>Some Documentation</p>
+    </div>
+    <div class="container">
+        <div class="row">
+          <?php foreach($gallery as $g) : ?>
+          <div class="col-sm mt-4">
+            <div class="card">
+              <div class="card-body">
+                <h6 class="text-center"><?= $g['judul']; ?></h6>
+                <img src="<?= base_url('assets/image') ?>/<?= $g['gambar']; ?>" width="300" style="border-radius: 20px;" height="200" alt="">
+                <p class="text-center mt-2" style="color: #c43552;"><?= $g['caption']; ?></p>
+              </div>
+            </div>
+           </div>
+           <?php endforeach; ?>
+        </div>  
+    </div>
     <!--Contact-->
     <div class="content3">
       <h4 class="text-center">Contact Us</h4>

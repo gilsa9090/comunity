@@ -25,12 +25,25 @@ class Kas extends CI_Controller
 
     public function laporan()
     {
+            $data['bulan'] = $this->Kas_model->getBulan();
             $data['nama'] = $this->Kas_model->laporan();
             $data['title'] = 'Halaman Laporan';
             $data['user'] = $this->db->get_where('user', ['username' => 
             $this->session->userdata('username')])->row_array();
             $this->load->view('templates/header', $data);
             $this->load->view('admin/detail/kas', $data);
+            $this->load->view('templates/footer');
+    }
+
+    public function table()
+    {
+            $data['bulan'] = $this->Kas_model->getBulan();
+            $data['nama'] = $this->Kas_model->laporan();
+            $data['title'] = 'Halaman Laporan';
+            $data['user'] = $this->db->get_where('user', ['username' => 
+            $this->session->userdata('username')])->row_array();
+            $this->load->view('templates/header', $data);
+            $this->load->view('admin/detail/laporan', $data);
             $this->load->view('templates/footer');
     }
 
