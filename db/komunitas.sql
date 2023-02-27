@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 20, 2023 at 08:24 AM
+-- Generation Time: Feb 27, 2023 at 07:31 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -79,9 +79,9 @@ INSERT INTO `divisi` (`id`, `nama_divisi`, `status`) VALUES
 --
 
 CREATE TABLE `divisi_member` (
-  `id` int(11) NOT NULL,
+  `id_member` int(11) NOT NULL,
   `user_id` int(255) NOT NULL,
-  `divisi_id` int(255) NOT NULL,
+  `divisi_id` varchar(255) NOT NULL,
   `status` varchar(255) NOT NULL,
   `deskripsi` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -90,9 +90,10 @@ CREATE TABLE `divisi_member` (
 -- Dumping data for table `divisi_member`
 --
 
-INSERT INTO `divisi_member` (`id`, `user_id`, `divisi_id`, `status`, `deskripsi`) VALUES
-(1, 1, 3, 'aktif', 'Bertanggung jawab atas semua anggota'),
-(2, 2, 2, 'aktif', 'Bertanggung Jawab atas Anggota');
+INSERT INTO `divisi_member` (`id_member`, `user_id`, `divisi_id`, `status`, `deskripsi`) VALUES
+(1, 1, 'Eksekutif', 'aktif', 'Bertanggung jawab atas semua anggota'),
+(4, 2, 'Eksekutif', 'aktif', 'Yoi Kerad Nemen Pokoke'),
+(5, 3, 'Keuangan', 'aktif', 'Aku Cantik Banget Pokoknya');
 
 -- --------------------------------------------------------
 
@@ -138,7 +139,12 @@ INSERT INTO `kas` (`id`, `user_id`, `bulan_id`, `status`) VALUES
 (3, 2, 6, '26000'),
 (4, 2, 8, '26000'),
 (5, 1, 8, '26000'),
-(6, 2, 2, '26000');
+(6, 2, 2, '26000'),
+(7, 3, 5, '26000'),
+(8, 3, 5, '25000'),
+(9, 2, 10, '25000'),
+(10, 1, 11, '25000'),
+(11, 3, 12, '25000');
 
 -- --------------------------------------------------------
 
@@ -157,7 +163,7 @@ CREATE TABLE `kas_master` (
 
 INSERT INTO `kas_master` (`id`, `nominal`) VALUES
 (1, 0),
-(2, 26000);
+(2, 25000);
 
 -- --------------------------------------------------------
 
@@ -214,8 +220,9 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `nama`, `username`, `image`, `password`, `role_id`, `is_active`, `date_created`) VALUES
-(1, 'Mela Alfia Rahma', 'mela123', 'Ririka_Lifiana_Portrait.png', '$2y$10$Jc973aujgfRWh4QaV8BuMO1pVR222KEF3mEEkQ45uoscrvylsEiPS', 1, 1, 1675779990),
-(2, 'Bakar Riyamuza Siad', 'bakar', 'The_Boys_Sold_the_World.jpg', '$2y$10$O8EJ.EXqYYIlJqSeDC7G0OdHDug6rpGiF0e/GniZHB2KEHXdcjw5a', 2, 1, 1675782659);
+(1, 'Mela Alfia Rahma', 'mela123', '6.jpg', '$2y$10$Jc973aujgfRWh4QaV8BuMO1pVR222KEF3mEEkQ45uoscrvylsEiPS', 1, 1, 1675779990),
+(2, 'Bakar Riyamuza Siad', 'bakar', 'The_Boys_Sold_the_World.jpg', '$2y$10$O8EJ.EXqYYIlJqSeDC7G0OdHDug6rpGiF0e/GniZHB2KEHXdcjw5a', 2, 1, 1675782659),
+(3, 'Lifanna Edelia', 'lifanna', '5.jpg', '$2y$10$YLbV9xmTpB76RDP3ZPSph.7ny29lRKSlOhvdA4woAo0.SfmstGXm.', 2, 1, 1677038458);
 
 --
 -- Indexes for dumped tables
@@ -237,9 +244,8 @@ ALTER TABLE `divisi`
 -- Indexes for table `divisi_member`
 --
 ALTER TABLE `divisi_member`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `user_id` (`user_id`),
-  ADD UNIQUE KEY `divisi_id` (`divisi_id`);
+  ADD PRIMARY KEY (`id_member`),
+  ADD UNIQUE KEY `user_id` (`user_id`);
 
 --
 -- Indexes for table `gallery`
@@ -299,7 +305,7 @@ ALTER TABLE `divisi`
 -- AUTO_INCREMENT for table `divisi_member`
 --
 ALTER TABLE `divisi_member`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_member` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `gallery`
@@ -311,7 +317,7 @@ ALTER TABLE `gallery`
 -- AUTO_INCREMENT for table `kas`
 --
 ALTER TABLE `kas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `kas_master`
@@ -335,7 +341,7 @@ ALTER TABLE `role_id`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
